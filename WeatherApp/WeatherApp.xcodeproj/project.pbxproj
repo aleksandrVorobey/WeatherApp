@@ -13,6 +13,9 @@
 		A6D86B462603E8070088202E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6D86B452603E8070088202E /* Assets.xcassets */; };
 		A6D86B492603E8070088202E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6D86B472603E8070088202E /* LaunchScreen.storyboard */; };
 		A6D86B542603ECE90088202E /* ListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D86B532603ECE90088202E /* ListTVC.swift */; };
+		A6D86B60260489330088202E /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D86B5F260489330088202E /* Constans.swift */; };
+		A6D86B6426049C880088202E /* NetworkWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D86B6326049C880088202E /* NetworkWeatherManager.swift */; };
+		A6D86B6726049E060088202E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D86B6626049E060088202E /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		A6D86B482603E8070088202E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6D86B4A2603E8070088202E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6D86B532603ECE90088202E /* ListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTVC.swift; sourceTree = "<group>"; };
+		A6D86B5F260489330088202E /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
+		A6D86B6326049C880088202E /* NetworkWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherManager.swift; sourceTree = "<group>"; };
+		A6D86B6626049E060088202E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,42 @@
 		A6D86B3B2603E8040088202E /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				A6D86B3C2603E8040088202E /* AppDelegate.swift */,
-				A6D86B3E2603E8040088202E /* SceneDelegate.swift */,
-				A6D86B422603E8040088202E /* Main.storyboard */,
-				A6D86B532603ECE90088202E /* ListTVC.swift */,
+				A6D86B59260488770088202E /* Model */,
+				A6D86B5A260488980088202E /* View */,
+				A6D86B5C260488FB0088202E /* Support */,
 				A6D86B452603E8070088202E /* Assets.xcassets */,
-				A6D86B472603E8070088202E /* LaunchScreen.storyboard */,
 				A6D86B4A2603E8070088202E /* Info.plist */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		A6D86B59260488770088202E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6D86B6326049C880088202E /* NetworkWeatherManager.swift */,
+				A6D86B6626049E060088202E /* WeatherData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6D86B5A260488980088202E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6D86B532603ECE90088202E /* ListTVC.swift */,
+				A6D86B422603E8040088202E /* Main.storyboard */,
+				A6D86B472603E8070088202E /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6D86B5C260488FB0088202E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				A6D86B3C2603E8040088202E /* AppDelegate.swift */,
+				A6D86B3E2603E8040088202E /* SceneDelegate.swift */,
+				A6D86B5F260489330088202E /* Constans.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +172,9 @@
 			files = (
 				A6D86B542603ECE90088202E /* ListTVC.swift in Sources */,
 				A6D86B3D2603E8040088202E /* AppDelegate.swift in Sources */,
+				A6D86B6426049C880088202E /* NetworkWeatherManager.swift in Sources */,
+				A6D86B60260489330088202E /* Constans.swift in Sources */,
+				A6D86B6726049E060088202E /* WeatherData.swift in Sources */,
 				A6D86B3F2603E8040088202E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
