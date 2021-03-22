@@ -8,13 +8,17 @@
 import UIKit
 
 class ListTVC: UITableViewController {
+    
+    let nameCitiesArray = ["Москва", "Петербург", "Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"]
+    
     var networkWeatherManager = NetworkWeatherManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        networkWeatherManager.fetchWeather()
-        
+        networkWeatherManager.fetchWeather { (weatherData) in
+            
+        }
     }
     
     

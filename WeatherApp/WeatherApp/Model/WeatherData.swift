@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct WeatherApp: Decodable {
+struct WeatherData: Decodable {
     let info: Info
     let fact: Fact
-    let forecast: [Forecast]
+    let forecast: Forecast
 }
 
 struct Info: Decodable {

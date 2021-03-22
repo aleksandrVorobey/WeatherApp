@@ -16,6 +16,8 @@
 		A6D86B60260489330088202E /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D86B5F260489330088202E /* Constans.swift */; };
 		A6D86B6426049C880088202E /* NetworkWeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D86B6326049C880088202E /* NetworkWeatherManager.swift */; };
 		A6D86B6726049E060088202E /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D86B6626049E060088202E /* WeatherData.swift */; };
+		A6D86B6A2604AA6F0088202E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D86B692604AA6F0088202E /* Weather.swift */; };
+		A6D86B6E2608ABF80088202E /* GetCitiesWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D86B6D2608ABF80088202E /* GetCitiesWeather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		A6D86B5F260489330088202E /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 		A6D86B6326049C880088202E /* NetworkWeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeatherManager.swift; sourceTree = "<group>"; };
 		A6D86B6626049E060088202E /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		A6D86B692604AA6F0088202E /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		A6D86B6D2608ABF80088202E /* GetCitiesWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCitiesWeather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 			children = (
 				A6D86B6326049C880088202E /* NetworkWeatherManager.swift */,
 				A6D86B6626049E060088202E /* WeatherData.swift */,
+				A6D86B692604AA6F0088202E /* Weather.swift */,
+				A6D86B6D2608ABF80088202E /* GetCitiesWeather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,10 +178,12 @@
 			files = (
 				A6D86B542603ECE90088202E /* ListTVC.swift in Sources */,
 				A6D86B3D2603E8040088202E /* AppDelegate.swift in Sources */,
+				A6D86B6E2608ABF80088202E /* GetCitiesWeather.swift in Sources */,
 				A6D86B6426049C880088202E /* NetworkWeatherManager.swift in Sources */,
 				A6D86B60260489330088202E /* Constans.swift in Sources */,
 				A6D86B6726049E060088202E /* WeatherData.swift in Sources */,
 				A6D86B3F2603E8040088202E /* SceneDelegate.swift in Sources */,
+				A6D86B6A2604AA6F0088202E /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
