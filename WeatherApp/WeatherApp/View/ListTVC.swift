@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ListTVC: UITableViewController {
+    
+    var emptyCity = Weather()
+    
+    var citiesArray = [Weather]()
     
     let nameCitiesArray = ["Москва", "Петербург", "Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"]
     
@@ -16,8 +21,18 @@ class ListTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        networkWeatherManager.fetchWeather { (weatherData) in
-            
+        if citiesArray.isEmpty {
+            citiesArray = Array(repeating: emptyCity, count: nameCitiesArray.count)
+        }
+        addCities()
+        
+    }
+    
+    func addCities() {
+        getCityWeather(citiesArray: self.nameCitiesArray) { (index, weather) in
+            self.citiesArray[index] = weather
+            self.citiesArray[index].name = self.nameCitiesArray[index]
+            print(self.citiesArray)
         }
     }
     
@@ -43,8 +58,5 @@ class ListTVC: UITableViewController {
 
         return cell
     }
-    
-
-    
-    
+        
 }

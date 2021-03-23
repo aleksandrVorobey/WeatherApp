@@ -9,14 +9,14 @@ import Foundation
 
 struct Weather {
     var name: String = "......"
-    var temperature: Int
-    var conditionCodeIcon: String
-    var url: String
-    var condition: String
-    var pressureMm: Int
-    var windSpeed: Double
-    var tempMin: Int
-    var tempMax: Int
+    var temperature: Int = 0
+    var conditionCodeIcon: String = ""
+    var url: String = ""
+    var condition: String = ""
+    var pressureMm: Int = 0
+    var windSpeed: Double = 0
+    var tempMin: Int = 0
+    var tempMax: Int = 0
     
     var conditionString: String {
         switch condition {
@@ -54,4 +54,6 @@ struct Weather {
         tempMin = weatherData.forecast.parts.first?.tempMin ?? 0
         tempMax = weatherData.forecast.parts.first?.tempMax ?? 0
     }
+    
+    init() {}
 }
