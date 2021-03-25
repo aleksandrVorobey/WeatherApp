@@ -14,7 +14,7 @@ class ListTVC: UITableViewController {
     
     var citiesArray = [Weather]()
     
-    let nameCitiesArray = ["Москва", /*"Петербург", "Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"*/]
+    let nameCitiesArray = ["Москва", "Петербург", /*"Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"*/]
     
     var networkWeatherManager = NetworkWeatherManager()
 
@@ -27,6 +27,11 @@ class ListTVC: UITableViewController {
         addCities()
         
     }
+    
+    @IBAction func pressPlusButton(_ sender: Any) {
+        print("press")
+    }
+    
 
     func addCities() {
         getCityWeather(citiesArray: self.nameCitiesArray) { (index, weather) in
@@ -59,7 +64,14 @@ class ListTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        <#code#>
+        let deleteAction = UIContextualAction(style: .destructive, title: "удалить") { (_, _, completionHandler) in
+            let editingRow = self.nameCitiesArray[indexPath.row]
+            if let index = self.nameCitiesArray.firstIndex(of: editingRow) {
+                self.citiesArray.remove(at: index)
+                tableView.reloadData()
+            }
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     
