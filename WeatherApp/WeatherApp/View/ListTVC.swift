@@ -14,7 +14,7 @@ class ListTVC: UITableViewController {
     
     var citiesArray = [Weather]()
     
-    let nameCitiesArray = ["Москва", "Петербург", "Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"]
+    let nameCitiesArray = ["Москва", /*"Петербург", "Пенза", "Уфа", "Новосибирск", "Челябинск", "Омск", "Екатеринбург", "Томск", "Сочи"*/]
     
     var networkWeatherManager = NetworkWeatherManager()
 
@@ -27,12 +27,15 @@ class ListTVC: UITableViewController {
         addCities()
         
     }
-    
+
     func addCities() {
         getCityWeather(citiesArray: self.nameCitiesArray) { (index, weather) in
             self.citiesArray[index] = weather
             self.citiesArray[index].name = self.nameCitiesArray[index]
-            print(self.citiesArray)
+            //print(self.citiesArray)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -40,23 +43,34 @@ class ListTVC: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return citiesArray.count
     }
 
-    
+    var weather = Weather()
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListCell
 
-        // Configure the cell...
-
+        weather = citiesArray[indexPath.row]
+        cell.configure(weather: weather)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        <#code#>
+    }
+    
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let cityWeather = citiesArray[indexPath.row]
+            let dstVC = segue.destination as! DetailVC
+            dstVC.weatherModel = cityWeather
+        }
     }
         
 }

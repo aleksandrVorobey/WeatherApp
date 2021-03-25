@@ -9,7 +9,7 @@ import Foundation
 
 struct Weather {
     var name: String = "......"
-    var temperature: Int = 0
+    var temperature: Int = 0 
     var conditionCodeIcon: String = ""
     var url: String = ""
     var condition: String = ""
